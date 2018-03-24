@@ -17,7 +17,7 @@
 
                             <ul class="doc-link__items">
                                 <%- value.each do |key2| -%>
-                                    <%- if key===@site_map.keys[0] && first_entry -%>
+                                    <%- if key===@site_map['Documents'][0] && first_entry -%>
                                         <%- active_keyword="active" -%>
                                         <%- first_entry = false -%>
                                     <%- else -%>
