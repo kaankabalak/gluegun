@@ -1,0 +1,32 @@
+    <aside class="sidebar">
+        <a href="" class="sidebar__close"></a>
+
+        <a href="/" class="logo">
+            <img src="<%= @site_map['Logo'] %>" alt="">
+        </a>
+
+        <ul class="doc-link">
+            <% if !@site_map['Documents'].nil? %>
+                <%- @site_map['Documents'].each do |heading| -%>
+                    <%- heading.each do |key, value| -%>
+                        <li class="doc-link__category">
+                            <a href="" class="doc-link__header">
+                                <%= key -%>
+                            </a>
+                            <ul class="doc-link__items">
+                                <%- value.each do |value2| -%>
+                                        <li>
+                                            <a href="/<%=value2["Slug"]%>.html">
+                                                <%= value2.keys[0] -%>
+                                            </a>
+                                        </li>
+                                <%- end -%>
+                            </ul>
+                        </li>
+                    <%- end -%>
+                <%- end -%>
+             <% end %>
+        </ul>
+    </aside>
+
+    <section class="content">
