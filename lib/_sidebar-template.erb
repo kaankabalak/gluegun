@@ -15,14 +15,16 @@
                             </a>
                             <ul class="doc-link__items">
                                 <%- value.each do |value2| -%>
-                                        <li>
-                                            <%- if !value2["Slug"] -%>
-                                                <%- value2["Slug"] = get_slug(value2) -%>
-                                            <%- end -%>
-                                            <a href="/<%=value2["Slug"]%>.html">
-                                                <%= value2.keys[0] -%>
-                                            </a>
-                                        </li>
+                                    <%- if reveal(raw(value2["Link"])) -%>
+                                            <li>
+                                                <%- if !value2["Slug"] -%>
+                                                    <%- value2["Slug"] = get_slug(value2) -%>
+                                                <%- end -%>
+                                                <a href="/<%=value2["Slug"]%>.html">
+                                                    <%= value2.keys[0] -%>
+                                                </a>
+                                            </li>
+                                    <%- end -%>
                                 <%- end -%>
                             </ul>
                         </li>
