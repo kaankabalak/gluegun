@@ -106,7 +106,7 @@ module Gluegun
 
     def self.generate_sidebar(site_config_file)
       config_file = get_config_file(site_config_file)
-      erb_file = '_sidebar-new.erb'
+      erb_file = '_sidebar.erb'
       @site_map = YAML.load(open(config_file).read)
       dest_path = "lib"
       if !dest_path.nil?
